@@ -14,8 +14,12 @@ else {
     app.use('/static', express.static('/var/app/static'));
 }
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve('templates/index.html'));
+});
+
+app.get('/ui', (req, res) => {
+    res.sendFile(path.resolve('templates/ui.html'));
 });
 
 app.listen(port, () => {
