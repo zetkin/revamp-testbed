@@ -1,0 +1,21 @@
+{
+  "name": "revamp-testbed",
+  "version": "1.0.0",
+  "description": "Testbed for libraries and practices to be used in revamped Zetkin front-ends",
+  "main": "src/server/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zetkin/revamp-testbed.git"
+  },
+  "author": "Zetkin Foundation",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/zetkin/revamp-testbed/issues"
+  },
+  "homepage": "https://github.com/zetkin/revamp-testbed#readme",
+  "dependencies": {
+  }
+}
