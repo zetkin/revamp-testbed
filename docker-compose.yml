@@ -1,0 +1,15 @@
+version: "2"
+services:
+    app:
+        build:
+            args:
+                NODE_ENV: "development"
+            context: .
+            dockerfile: ./env/Dockerfile
+        environment:
+            NODE_ENV: "development"
+        ports:
+            - 80:80
+        volumes:
+            - ./src:/var/app/src
+            - ./templates:/var/app/templates
