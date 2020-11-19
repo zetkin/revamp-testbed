@@ -1,0 +1,61 @@
+{
+   "person" : {
+      "city" : null,
+      "alt_phone" : null,
+      "email" : "r@richardolsson.se",
+      "last_name" : "Olsson",
+      "zip_code" : null,
+      "reminder_sent" : null,
+      "is_user" : true,
+      "first_name" : "Richard",
+      "id" : 10447,
+      "street_address" : null,
+      "co_address" : null,
+      "phone" : "0704-007858",
+      "gender" : null,
+      "country" : null,
+      "ext_id" : null,
+      "tagList" : {
+         "items" : [
+            {
+               "isPending" : false,
+               "data" : {
+                  "id" : 190
+               },
+               "error" : null
+            }
+         ],
+         "lastPage" : 0,
+         "isPending" : false,
+         "error" : null
+      }
+   },
+   "action" : {
+      "isParticipantsPending" : false,
+      "start_time" : "2020-11-22T09:30:00+00:00",
+      "contact" : {
+         "id" : 10447,
+         "name" : "Richard Olsson"
+      },
+      "title" : "",
+      "campaign" : {
+         "title" : "Zetkin hackathons",
+         "id" : 83
+      },
+      "num_participants_available" : 3,
+      "location" : {
+         "title" : "Kontorskollektivet, Malmö",
+         "id" : 267,
+         "lng" : 13.0067682558822,
+         "lat" : 55.5933354148347
+      },
+      "activity" : {
+         "title" : "Hackathon",
+         "id" : 97
+      },
+      "id" : 16496,
+      "info_text" : "Var med och bidra till Zetkins utveckling, oavsett förkunskaper! Vi bjuder på frukost och lunch, och håller på så länge vi vill. Det går också bra att vara med på distans.",
+      "num_participants_required" : 2,
+      "end_time" : "2020-11-22T17:00:00+00:00"
+   }
+}
