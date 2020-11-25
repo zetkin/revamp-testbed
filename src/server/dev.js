@@ -29,11 +29,40 @@ module.exports = app => {
                     }]
                 },
                 {
+                    test: /\.css$/i,
+                    use: [
+                        'style-loader',
+                        'css-loader',
+                    ],
+                },
+                {
                     test: /\.scss$/,
                     use: [
                         'style-loader',
                         'css-loader',
                         'sass-loader',
+                    ],
+                },
+                {
+                    test: /\.(png|jpg|gif)$/i,
+                    use: [
+                      {
+                        loader: 'url-loader',
+                        options: {
+                          mimetype: 'image/png',
+                        },
+                      },
+                    ],
+                },
+                {
+                    test: /\.svg$/i,
+                    use: [
+                      {
+                        loader: 'url-loader',
+                        options: {
+                          encoding: false,
+                        },
+                      },
                     ],
                 },
             ],

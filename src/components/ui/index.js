@@ -1,3 +1,3 @@
 module.exports = {
-    'material-ui': require('./MaterialUI').default,
+    'ant-design': require('./AntDesign').default,
 };
