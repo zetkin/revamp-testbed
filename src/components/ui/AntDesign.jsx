@@ -6,8 +6,7 @@ import {QuestionCircleFilled, InfoCircleFilled} from '@ant-design/icons';
 const AntDesign = props => {
     console.log(props.data);
 
-    const { Title, Text, Link } = Typography;
-    const { Header, Footer, Content } = Layout;
+    const { Content } = Layout;
 
     return(
         <Layout>
@@ -25,7 +24,7 @@ export default AntDesign;
 
 const Person = props => {
 
-    const { Title, Text, Link } = Typography;
+    const { Title, Link } = Typography;
 
     return (
         <Row gutter={[0, 100]}>
@@ -74,7 +73,6 @@ const Person = props => {
                             avatar={<InfoCircleFilled/>}
                             title="View activity timeline"
                         />
-                        
                     </List.Item> 
                 </List>
                 <Link>Edit personal data</Link>
@@ -88,7 +86,7 @@ const Person = props => {
 
 const EditPerson = props => {
 
-    const { Title, Text, Link } = Typography;
+    const { Title, Text } = Typography;
 
     return(
         <Row gutter={[0, 100]} wrap={false}>
@@ -174,14 +172,14 @@ const Action = props => {
                             </List.Item>
                             <List.Item>
                                 <List.Item.Meta 
-                                        avatar={<InfoCircleFilled/>}
-                                        title={props.data.action.location.title}
+                                    avatar={<InfoCircleFilled/>}
+                                    title={props.data.action.location.title}
                                 />
                             </List.Item>
                             <List.Item>
                                 <List.Item.Meta 
-                                        avatar={<InfoCircleFilled/>}
-                                        title={props.data.action.activity.title}
+                                    avatar={<InfoCircleFilled/>}
+                                    title={props.data.action.activity.title}
                                 />
                             </List.Item>
                         </List>
@@ -252,7 +250,7 @@ const Action = props => {
 
 const EditAction = props => {
 
-    const { Title, Text, Link } = Typography;
+    const { Title, Text } = Typography;
     const { TextArea } = Input;
 
     return(
