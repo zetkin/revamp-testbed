@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Avatar, Button, Cascader, Col, DatePicker, Input, Layout, Link, List, Row, Space, Tag, TextArea, TimePicker, Typography } from 'antd';
 import 'antd/dist/antd.css';
 import {QuestionCircleFilled, InfoCircleFilled} from '@ant-design/icons';
@@ -116,17 +116,33 @@ const EditPerson = props => {
     
 
 const Action = props => {
-
     const { Title, Text, Link } = Typography;
-    const duration = props.data.action.start_time.slice(11, 16) + "–" +  props.data.action.end_time.slice(11, 16);
 
-    function onChange(value, selectedOptions) {
-        console.log(value, selectedOptions);
-    }
-      
-    function filter(inputValue, path) {
+    const [selection, setSelection] = useState()
+    const duration = props.data.action.start_time.slice(11, 16) + "–" +  props.data.action.end_time.slice(11, 16);
+    const person = props.data.person.first_name + " " + props.data.person.last_name;
+    const options = [
+        {
+            value: person,
+            label: person,
+        },
+        {
+            value: "kristoffer larberg",
+            label: "Kristoffer Larberg",
+        },
+        {
+            value: "niklas vanhaninen",
+            label: "Niklas Vanhainen",
+        },
+      ];
+
+      function onChange(value, selectedOptions) {
+        setSelection(value);
+      }
+
+      function filter(inputValue, path) {
         return path.some(option => option.label.toLowerCase().indexOf(inputValue.toLowerCase()) > -1);
-    }
+      }
 
     return (
         <Row gutter={[0, 100]} wrap={false}>
@@ -220,13 +236,14 @@ const Action = props => {
                             <Title level={3}>Booked participants</Title>
                         </Space>
                         <Cascader
-                            action={props.data.action}
+                            options={options}
                             onChange={onChange}
                             placeholder="Please select"
                             showSearch={{ filter }}
                         />
                     </Space>
                 </Col>
+                {selection ? selection : null}
             </Row>
             </Col>
             <Col flex="2rem"/>
