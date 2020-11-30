@@ -1,3 +1,3 @@
 module.exports = {
-    'material-ui': require('./MaterialUI').default,
+    'grommet-ui': require('./GrommetUI').default,
 };
