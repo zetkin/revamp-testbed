@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import styled from 'styled-components';
 import {
     Anchor,
     Avatar,
@@ -25,14 +26,32 @@ const theme = {
     global: {
         colors: {
             brand: '#228BE6',
+        },
+        font: {
+            family: 'Roboto',
+            size: '18px',
+            height: '20px',
+        },
     },
-    font: {
-        family: 'Roboto',
-        size: '18px',
-        height: '20px',
-    },
-},
-  };
+};
+
+const SaveButton = styled(Button)`
+    width: calc(100% - 2rem);
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+`;
+
+const DeleteButton = styled(SaveButton)`
+    width: 400px;
+    padding: 1rem;
+    background-color: #FF4040;
+    border-radius: 2px;
+    border: 0;
+    color: white;
+`;
 
 const AppBar = (props) => (
     <Box
@@ -334,8 +353,8 @@ const EditAction = props => {
                 /* value={value}
                 onChange={event => setValue(event.target.value)} */
             />
-            <Button icon={<Trash />} margin='small' secondary size='small' label='Delete' />
-            <Button margin='large' primary size='medium' label='Save' />
+            <DeleteButton icon={<Trash color='white' />} margin='small' secondary size='small' label='Delete' />
+            <SaveButton margin='large' primary size='medium' label='Save' />
         </Box>
 )};
 
@@ -520,6 +539,6 @@ const EditPerson = props => {
                 /* value={value}
                 onChange={({ option }) => setValue(option)} */
             />
-            <Button margin='large' primary size='medium' label='Save' />
+            <SaveButton margin='large' primary size='medium' label='Save' />
         </Box>
 )};
