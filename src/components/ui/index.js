@@ -1,3 +1,3 @@
 module.exports = {
-    'ant-design': require('./AntDesign').default,
+    'fluent-ui': require('./FluentUI').default,
 };
