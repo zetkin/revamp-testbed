@@ -62,48 +62,48 @@ const GrommetUI = props => {
                         </AppBar>
                         <Box direction='row' flex overflow={{ horizontal: 'hidden' }}>
                             <Box flex align='center' justify='center'>
-                            <Action data={props.data}/>
-                            <EditAction data={props.data}/>
-                            <Person data={props.data}/>
-                            <EditPerson data={props.data}/>
+                                <Action data={props.data}/>
+                                <EditAction data={props.data}/>
+                                <Person data={props.data}/>
+                                <EditPerson data={props.data}/>
                             </Box>
-                                {(!showSidebar || size !== 'small') ? (
-                                    <Collapsible direction='horizontal' open={showSidebar}>
-                                        <Box
-                                            flex
-                                            width='medium'
-                                            background='light-2'
-                                            elevation='small'
-                                            align='center'
-                                            justify='center'
-                                        >
-                                            sidebar
-                                        </Box>
-                                    </Collapsible>
-                                ): (
-                                    <Layer>
-                                        <Box
-                                            background='light-2'
-                                            tag='header'
-                                            justify='end'
-                                            align='center'
-                                            direction='row'
-                                        >
-                                            <Button
-                                                icon={<FormClose />}
-                                                onClick={() => setShowSidebar(false)}
-                                            />
+                            {(!showSidebar || size !== 'small') ? (
+                                <Collapsible direction='horizontal' open={showSidebar}>
+                                    <Box
+                                        flex
+                                        width='medium'
+                                        background='light-2'
+                                        elevation='small'
+                                        align='center'
+                                        justify='center'
+                                    >
+                                        sidebar
                                     </Box>
-                                        <Box
-                                            fill
-                                            background='light-2'
-                                            align='center'
-                                            justify='center'
-                                        >
-                                            sidebar
-                                        </Box>
-                                    </Layer>
-                                )}
+                                </Collapsible>
+                            ): (
+                                <Layer>
+                                    <Box
+                                        background='light-2'
+                                        tag='header'
+                                        justify='end'
+                                        align='center'
+                                        direction='row'
+                                    >
+                                        <Button
+                                            icon={<FormClose />}
+                                            onClick={() => setShowSidebar(false)}
+                                        />
+                                    </Box>
+                                    <Box
+                                        fill
+                                        background='light-2'
+                                        align='center'
+                                        justify='center'
+                                    >
+                                        sidebar
+                                    </Box>
+                                </Layer>
+                            )}
                         </Box>
                     </Box>
                 )}
@@ -400,7 +400,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
                 {v}
             </Tag>
       ));
-  
+
     return (
         <Keyboard onEnter={onEnter}>
             <Box
@@ -427,32 +427,31 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
                     />
                 </Box>
             </Box>
-      </Keyboard>
-    );
-  };
+        </Keyboard>
+)};
 
 const Person = props => {
     const [selectedTags, setSelectedTags] = React.useState(['foo', 'sony']);
     const [suggestions, setSuggestions] = React.useState(allSuggestions);
   
     const onRemoveTag = tag => {
-      const removeIndex = selectedTags.indexOf(tag);
-      const newTags = [...selectedTags];
-      if (removeIndex >= 0) {
-        newTags.splice(removeIndex, 1);
-      }
-      setSelectedTags(newTags);
+        const removeIndex = selectedTags.indexOf(tag);
+        const newTags = [...selectedTags];
+        if (removeIndex >= 0) {
+            newTags.splice(removeIndex, 1);
+        }
+        setSelectedTags(newTags);
     };
   
     const onAddTag = tag => setSelectedTags([...selectedTags, tag]);
   
     const onFilterSuggestion = value =>
-      setSuggestions(
-        allSuggestions.filter(
-          suggestion =>
-            suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
-        ),
-      )
+        setSuggestions(
+            allSuggestions.filter(
+            suggestion =>
+                suggestion.toLowerCase().indexOf(value.toLowerCase()) >= 0,
+            ),
+        )
    
     return (
         <Box fill='horizontal' margin='medium'>
@@ -478,17 +477,16 @@ const Person = props => {
             <Heading margin='0' level='4'>
                 Tags
             </Heading>
-  
-      <Box pad="small">
-        <TagInput
-          placeholder="Search for aliases..."
-          suggestions={suggestions}
-          value={selectedTags}
-          onRemove={onRemoveTag}
-          onAdd={onAddTag}
-          onChange={({ target: { value } }) => onFilterSuggestion(value)}
-        />
-      </Box>
+            <Box pad="small">
+                <TagInput
+                placeholder="Search for aliases..."
+                suggestions={suggestions}
+                value={selectedTags}
+                onRemove={onRemoveTag}
+                onAdd={onAddTag}
+                onChange={({ target: { value } }) => onFilterSuggestion(value)}
+                />
+            </Box>
         </Box>
 )};
 
