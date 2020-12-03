@@ -344,18 +344,18 @@ const allSuggestions = ['sony', 'sonar', 'foo', 'bar'];
 const Tag = ({ children, onRemove, ...rest }) => {
     const tag = (
         <Box
-            direction="row"
-            align="center"
-            background="brand"
+            direction='row'
+            align='center'
+            background='brand'
             pad={{ horizontal: 'xsmall', vertical: 'xxsmall' }}
             margin={{ vertical: 'xxsmall' }}
-            round="medium"
+            round='medium'
             {...rest}
         >
-        <Text size="xsmall" margin={{ right: 'xxsmall' }}>
+        <Text size='xsmall' margin={{ right: 'xxsmall' }}>
             {children}
         </Text>
-            {onRemove && <FormClose size="small" color="white" />}
+            {onRemove && <FormClose size='small' color='white' />}
         </Box>
     );
 
@@ -393,7 +393,7 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
     const renderValue = () =>
         value.map((v, index) => (
             <Tag
-                margin="xxsmall"
+                margin='xxsmall'
                 key={`${v}${index + 0}`}
                 onRemove={() => onRemove(v)}
             >
@@ -404,17 +404,17 @@ const TagInput = ({ value = [], onAdd, onChange, onRemove, ...rest }) => {
     return (
         <Keyboard onEnter={onEnter}>
             <Box
-                direction="row"
-                align="center"
+                direction='row'
+                align='center'
                 pad={{ horizontal: 'xsmall' }}
-                border="all"
+                border='all'
                 ref={boxRef}
                 wrap
             >
                 {value.length > 0 && renderValue()}
                 <Box flex style={{ minWidth: '120px' }}>
                     <TextInput
-                        type="search"
+                        type='search'
                         plain
                         dropTarget={box}
                         {...rest}
@@ -477,9 +477,9 @@ const Person = props => {
             <Heading margin='0' level='4'>
                 Tags
             </Heading>
-            <Box pad="small">
+            <Box pad='small'>
                 <TagInput
-                placeholder="Search for aliases..."
+                placeholder='Search for aliases...'
                 suggestions={suggestions}
                 value={selectedTags}
                 onRemove={onRemoveTag}
