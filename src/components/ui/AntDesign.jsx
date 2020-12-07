@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { Avatar, Button, Cascader, Col, DatePicker, Input, Layout, Link, List, Row, Space, Tag, TextArea, TimePicker, Typography } from 'antd';
-import 'antd/dist/antd.css';
+/* import 'antd/dist/antd.css'; */
 import {QuestionCircleFilled, InfoCircleFilled} from '@ant-design/icons';
 
 const AntDesign = props => {
