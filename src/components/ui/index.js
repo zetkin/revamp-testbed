@@ -1,5 +1,5 @@
 module.exports = {
-	  'react-md': require('./ReactMD').default,
+	  'react-md': require('./ReactMd').default,
     'fluent-ui': require('./FluentUI').default,
     'grommet-ui': require('./GrommetUI').default,
     'ant-design': require('./AntDesign').default,
