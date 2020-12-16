@@ -5,4 +5,5 @@ module.exports = {
     'ant-design': require('./AntDesign').default,
     'chakra': require('./Chakra').default,
     'sancho': require('./Sancho').default,
+    'react-suite': require('./ReactSuite').default,
 };
